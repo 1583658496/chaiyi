@@ -1,0 +1,1831 @@
+From d353c5654d6e446d3c7d0463e7082e4c8c0cfce9 Mon Sep 17 00:00:00 2001
+From: hxy26 <13970947+hxy26@user.noreply.gitee.com>
+Date: Wed, 30 Oct 2024 19:27:15 +0800
+Subject: 曹文开的修改
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+
+diff --git a/2.jpg b/2.jpg
+deleted file mode 100644
+index 93b08c2..0000000
+Binary files a/2.jpg and /dev/null differ
+diff --git a/4.jpg b/4.jpg
+deleted file mode 100644
+index cddacd6..0000000
+Binary files a/4.jpg and /dev/null differ
+diff --git a/index0.html b/index0.html
+deleted file mode 100644
+index feca423..0000000
+--- a/index0.html
++++ /dev/null
+@@ -1,75 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="zh-CN">
+-
+-<head>
+-    <meta charset="utf-8">
+-    <title>实现左右过渡切换的登录注册页面</title>
+-    <link rel="stylesheet" href="style.css">
+-</head>
+-
+-<body>
+-
+-    <!-- 右上 -->
+-    <div class="navbar">
+-        <a href="协议\bangzhuzhongxin.html" class="nav-item">用户协议</a>
+-        <a href="协议\zhengce.html" class="nav-item">隐私政策</a>
+-        <a href="协议\bangzhuzhongxin.html" class="nav-item">帮助中心</a>
+-        <div class="nav-item">
+-            <span>中文（简体）</span>
+-        </div>
+-    </div>
+-<!-- 登录界面 -->
+-    <div class="dowebok">
+-        <div class="form sign-in">
+-            <h2>欢迎回来</h2>
+-            <label>
+-                <span>邮箱</span>
+-                <input type="email"required />
+-            </label>
+-            <label>
+-                <span>密码</span>
+-                <input type="password" required />  
+-            </label>
+-            <p class="forgot-pass"><a href="javascript:">忘记密码？</a></p>
+-            <button type="button" class="submit">登 录</button>
+-            <button type="button" class="fb-btn">暂不登陆，先看看？</button>
+-        </div>
+-        <div class="sub-cont">
+-            <div class="img">
+-                <div class="img__text m--up">
+-                    <h2>还未注册？</h2>
+-                    
+-                </div>
+-                <div class="img__text m--in">
+-                    <h2>已有帐号？</h2>
+-                   
+-                </div>
+-                <div class="img__btn">
+-                    <span class="m--up">注 册</span>
+-                    <span class="m--in">登 录</span>
+-                </div>
+-            </div>
+-            <div class="form sign-up">
+-                <h2>立即注册</h2>
+-                <label>
+-                    <span>用户名</span>
+-                    <input type="text" />
+-                </label>
+-                <label>
+-                    <span>邮箱</span>
+-                    <input type="email" />
+-                </label>
+-                <label>
+-                    <span>密码</span>
+-                    <input type="password" />
+-                </label>
+-                <button type="button" class="submit">注 册</button>
+-                <button type="button" class="fb-btn">暂不登陆，先看看？</button>
+-            </div>
+-        </div>
+-    </div>
+-
+-    <script src="script.js"></script>
+-</body>
+-
+-</html>
+\ No newline at end of file
+diff --git a/script.js b/script.js
+deleted file mode 100644
+index aa0b5db..0000000
+--- a/script.js
++++ /dev/null
+@@ -1,4 +0,0 @@
+-
+-document.querySelector('.img__btn').addEventListener('click', function() {
+-    document.querySelector('.dowebok').classList.toggle('s--signup')
+-})
+diff --git a/static/forgetback.jpg b/static/forgetback.jpg
+new file mode 100644
+index 0000000..616b753
+Binary files /dev/null and b/static/forgetback.jpg differ
+diff --git a/static/login.js b/static/login.js
+new file mode 100644
+index 0000000..c9d61ca
+--- /dev/null
++++ b/static/login.js
+@@ -0,0 +1,5 @@
++
++document.querySelector('.img__btn').addEventListener('click', function() {
++    document.querySelector('.dowebok').classList.toggle('s--signup')
++})
++
+diff --git a/static/loginback.jpg b/static/loginback.jpg
+new file mode 100644
+index 0000000..cddacd6
+Binary files /dev/null and b/static/loginback.jpg differ
+diff --git a/static/loginback2.jpg b/static/loginback2.jpg
+new file mode 100644
+index 0000000..93b08c2
+Binary files /dev/null and b/static/loginback2.jpg differ
+diff --git a/static/logo1.png b/static/logo1.png
+new file mode 100644
+index 0000000..a0cfe9b
+Binary files /dev/null and b/static/logo1.png differ
+diff --git a/static/styleforget.css b/static/styleforget.css
+new file mode 100644
+index 0000000..75f5b0b
+--- /dev/null
++++ b/static/styleforget.css
+@@ -0,0 +1,63 @@
++body {
++    display: flex;
++    justify-content: center;
++    /* 水平居中 */
++    align-items: center;
++    /* 垂直居中 */
++    height: 100vh;
++    /* 视口高度 */
++    margin: 0;
++    /* 去除默认边距 */
++     background-image: url("forgetback.jpg");
++     background-repeat: no-repeat;/*确保背景图像不重复。*/
++     overflow: hidden;/*隐藏溢出容器边界的任何内容。*/
++     background-position: center; /* 背景图像中心对齐 */
++     background-size:cover;/*缩放背景图像以覆盖整个背景区域，必要时进行裁剪。*/
++}
++
++.container1 {
++    background-color: rgba(250, 250, 250, 0.5);
++    margin: 20% auto;
++    width: 500px;
++    height: 325px;
++    margin-top: 285px;
++    border-radius: 5px;
++    display: block;
++    box-shadow: 0 0 10px #333;
++    position: relative;
++}
++
++input {
++    width: 410px;
++    height: 35px;
++    padding: 10px; /* 内边距 */
++    border: 2px solid #007BFF; /* 边框颜色和厚度 */
++    border-radius: 5px; /* 圆角 */
++    font-size: 16px; /* 字体大小 */
++    color: #333; /* 文字颜色 */
++    transition: border-color 0.3s ease; /* 平滑过渡 */
++}
++
++input:focus {
++    border-color: #0056b3; /* 聚焦时的边框颜色 */
++    outline: none; /* 去除默认的轮廓 */
++    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* 聚焦时的阴影效果 */
++}
++
++button:hover {
++    background-color: #0056b3;
++    /* 悬停时背景颜色 */
++    border-color: #0056b3;
++    /* 悬停时边框颜色 */
++}
++
++button {
++    background-color: #007BFF;
++    /* 或其他颜色 */
++    color: white;
++    /* 文字颜色 */
++    border: 1px solid #007BFF;
++    /* 边框 */
++    cursor: pointer;
++    /* 鼠标悬停时显示为手形 */
++} 
+diff --git a/static/stylelogin.css b/static/stylelogin.css
+new file mode 100644
+index 0000000..20db2a0
+--- /dev/null
++++ b/static/stylelogin.css
+@@ -0,0 +1,373 @@
++*,
++*:before,
++*:after {
++    box-sizing: border-box;
++    margin: 0;
++    padding: 0;
++}
++
++body {
++    font-family: Arial, sans-serif;
++    margin: 0;
++    padding: 0;
++    background-image: url("loginback.jpg");
++    background-size: cover;
++    /* 使图片覆盖整个背景 */
++    background-repeat: no-repeat;
++    /* 防止图片重复 */
++
++}
++
++.navbar {
++    display: flex;
++    justify-content: flex-end;
++    /* 右对齐 */
++    align-items: center;
++    background-color: #f9f9f9;
++    padding: 10px 20px;
++    border-top: 1px solid #e1e1e1;
++    position: absolute;
++    /* 绝对定位 */
++    top: 0;
++    /* 距离顶部 0 */
++    right: 0;
++    /* 距离右边 0 */
++    background-color: rgba(0, 0, 0, 0.1);
++    /* 设置导航栏背景为淡灰色 */
++}
++
++.nav-item {
++    margin: 0 15px;
++    color: #b3a9a9;
++    text-decoration: none;
++    font-size: 14px;
++    transition: color 0.3s;
++}
++
++.nav-item:hover {
++    color: #007bff;
++    /* 鼠标悬停时的颜色 */
++}
++
++.language-dropdown {
++    position: relative;
++    display: inline-block;
++}
++
++.language-dropdown span {
++    color: #555;
++    cursor: pointer;
++    font-size: 14px;
++}
++
++.language-dropdown .dropdown-content {
++    display: none;
++    position: absolute;
++    background-color: #f9f9f9;
++    min-width: 100px;
++    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
++    z-index: 1;
++}
++
++.language-dropdown:hover .dropdown-content {
++    display: block;
++    /* 鼠标悬停时显示下拉菜单 */
++}
++
++.language-dropdown .dropdown-content a {
++    color: #555;
++    padding: 12px 16px;
++    text-decoration: none;
++    display: block;
++    text-align: left;
++}
++
++.language-dropdown .dropdown-content a:hover {
++    background-color: #f1f1f1;
++    /* 下拉菜单项悬停时的背景颜色 */
++}
++
++input,
++button {
++    border: none;
++    outline: none;
++    background: none;
++    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
++}
++
++.input {
++    font-size: 5px;
++}
++
++.tip {
++    font-size: 20px;
++    margin: 40px auto 50px;
++    text-align: center;
++}
++
++.dowebok {
++    overflow: hidden;
++    position: absolute;
++    left: 50%;
++    top: 50%;
++    width: 900px;
++    height: 550px;
++    margin: -300px 0 0 -450px;
++    background: #fff;
++}
++
++.form {
++    position: relative;
++    width: 640px;
++    height: 100%;
++    transition: -webkit-transform 0.6s ease-in-out;
++    transition: transform 0.6s ease-in-out;
++    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
++    padding: 50px 30px 0;
++}
++
++.sub-cont {
++    overflow: hidden;
++    position: absolute;
++    left: 640px;
++    top: 0;
++    width: 900px;
++    height: 100%;
++    padding-left: 260px;
++    background: #fff;
++    transition: -webkit-transform 0.6s ease-in-out;
++    transition: transform 0.6s ease-in-out;
++    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
++}
++
++.dowebok.s--signup .sub-cont {
++    -webkit-transform: translate3d(-640px, 0, 0);
++    transform: translate3d(-640px, 0, 0);
++}
++
++button {
++    display: block;
++    margin: 0 auto;
++    width: 260px;
++    height: 36px;
++    border-radius: 30px;
++    color: #fff;
++    font-size: 15px;
++    cursor: pointer;
++}
++
++.img {
++    overflow: hidden;
++    z-index: 2;
++    position: absolute;
++    left: 0;
++    top: 0;
++    width: 260px;
++    height: 100%;
++    padding-top: 360px;
++}
++
++.img:before {
++    content: '';
++    position: absolute;
++    right: 0;
++    top: 0;
++    width: 900px;
++    height: 100%;
++    background-image: url(loginback2.jpg);
++    background-size: cover;
++    transition: -webkit-transform 0.6s ease-in-out;
++    transition: transform 0.6s ease-in-out;
++    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
++}
++
++.img:after {
++    content: '';
++    position: absolute;
++    left: 0;
++    top: 0;
++    width: 100%;
++    height: 100%;
++    background: rgba(0, 0, 0, 0.6);
++}
++
++.dowebok.s--signup .img:before {
++    -webkit-transform: translate3d(640px, 0, 0);
++    transform: translate3d(640px, 0, 0);
++}
++
++.img__text {
++    z-index: 2;
++    position: absolute;
++    left: 0;
++    top: 50px;
++    width: 100%;
++    padding: 0 20px;
++    text-align: center;
++    color: #fff;
++    transition: -webkit-transform 0.6s ease-in-out;
++    transition: transform 0.6s ease-in-out;
++    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
++}
++
++.img__text h2 {
++    margin-bottom: 10px;
++    font-weight: normal;
++}
++
++.img__text p {
++    font-size: 14px;
++    line-height: 1.5;
++}
++
++.dowebok.s--signup .img__text.m--up {
++    -webkit-transform: translateX(520px);
++    transform: translateX(520px);
++}
++
++.img__text.m--in {
++    -webkit-transform: translateX(-520px);
++    transform: translateX(-520px);
++}
++
++.dowebok.s--signup .img__text.m--in {
++    -webkit-transform: translateX(0);
++    transform: translateX(0);
++}
++
++.img__btn {
++    overflow: hidden;
++    z-index: 2;
++    position: relative;
++    width: 100px;
++    height: 36px;
++    margin: 0 auto;
++    background: transparent;
++    color: #fff;
++    text-transform: uppercase;
++    font-size: 15px;
++    cursor: pointer;
++}
++
++.img__btn:after {
++    content: '';
++    z-index: 2;
++    position: absolute;
++    left: 0;
++    top: 0;
++    width: 100%;
++    height: 100%;
++    border: 2px solid #fff;
++    border-radius: 30px;
++}
++
++.img__btn span {
++    position: absolute;
++    left: 0;
++    top: 0;
++    display: flex;
++    justify-content: center;
++    align-items: center;
++    width: 100%;
++    height: 100%;
++    transition: -webkit-transform 0.6s;
++    transition: transform 0.6s;
++    transition: transform 0.6s, -webkit-transform 0.6s;
++}
++
++.img__btn span.m--in {
++    -webkit-transform: translateY(-72px);
++    transform: translateY(-72px);
++}
++
++.dowebok.s--signup .img__btn span.m--in {
++    -webkit-transform: translateY(0);
++    transform: translateY(0);
++}
++
++.dowebok.s--signup .img__btn span.m--up {
++    -webkit-transform: translateY(72px);
++    transform: translateY(72px);
++}
++
++h2 {
++    width: 100%;
++    font-size: 26px;
++    text-align: center;
++    margin-bottom: 30px;
++}
++
++
++
++
++input {
++    display: block;
++    width:300px;
++    margin-top: 5px;
++    padding-bottom: 5px;
++    font-size: 16px;
++    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
++}
++input::placeholder {
++    font-size: 12px; /* 设置placeholder的字体大小 */
++    color: #999; /* 你也可以设置颜色，视情况而定 */
++}
++.forgot-pass {
++    margin-top: 15px;
++    text-align: center;
++    font-size: 12px;
++    color: #cfcfcf;
++}
++
++.forgot-pass a {
++    position: relative;
++    left: 100px;
++    color: #625b5b;
++}
++
++.submit {
++    margin-top: 40px;
++    margin-bottom: 20px;
++    background: #d4af7a;
++    text-transform: uppercase;
++}
++
++.fb-btn {
++    border: 2px solid #d3dae9;
++    color: #8fa1c7;
++}
++
++.fb-btn span {
++    font-weight: bold;
++    color: #455a81;
++}
++
++.sign-in {
++    transition-timing-function: ease-out;
++}
++
++.dowebok.s--signup .sign-in {
++    transition-timing-function: ease-in-out;
++    transition-duration: 0.6s;
++    -webkit-transform: translate3d(640px, 0, 0);
++    transform: translate3d(640px, 0, 0);
++}
++
++.sign-up {
++    -webkit-transform: translate3d(-900px, 0, 0);
++    transform: translate3d(-900px, 0, 0);
++}
++
++.dowebok.s--signup .sign-up {
++    -webkit-transform: translate3d(0, 0, 0);
++    transform: translate3d(0, 0, 0);
++}
++
++.password11{
++    width: 100%;
++    display: flex; /* 使用Flexbox */
++    flex-direction: column; /* 让输入框垂直排列 */
++    align-items: center; /* 水平居中 */
++    gap: 30px; /* 设置输入框之间的距离 */
++    padding: 30px;
++}
+\ No newline at end of file
+diff --git a/style.css b/style.css
+deleted file mode 100644
+index a2e2147..0000000
+--- a/style.css
++++ /dev/null
+@@ -1,346 +0,0 @@
+-*, *:before, *:after {
+-    box-sizing: border-box;
+-    margin: 0;
+-    padding: 0;
+-}
+-
+-body {
+-    font-family: Arial, sans-serif;
+-    margin: 0;
+-    padding: 0;
+-   background-image: url("4.jpg");
+-   background-size: cover; /* 使图片覆盖整个背景 */
+-    background-repeat: no-repeat; /* 防止图片重复 */
+-  
+-}
+-
+-.navbar {
+-    display: flex;
+-    justify-content: flex-end; /* 右对齐 */
+-    align-items: center;
+-    background-color: #f9f9f9;
+-    padding: 10px 20px;
+-    border-top: 1px solid #e1e1e1;
+-    position: absolute; /* 绝对定位 */
+-    top: 0; /* 距离顶部 0 */
+-    right: 0; /* 距离右边 0 */
+-    background-color: rgba(0, 0, 0, 0.1); /* 设置导航栏背景为淡灰色 */
+-}
+-.nav-item {
+-    margin: 0 15px;
+-    color: #b3a9a9;
+-    text-decoration: none;
+-    font-size: 14px;
+-    transition: color 0.3s;
+-}
+-
+-.nav-item:hover {
+-    color: #007bff; /* 鼠标悬停时的颜色 */
+-}
+-
+-.language-dropdown {
+-    position: relative;
+-    display: inline-block;
+-}
+-
+-.language-dropdown span {
+-    color: #555;
+-    cursor: pointer;
+-    font-size: 14px;
+-}
+-
+-.language-dropdown .dropdown-content {
+-    display: none;
+-    position: absolute;
+-    background-color: #f9f9f9;
+-    min-width: 100px;
+-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+-    z-index: 1;
+-}
+-
+-.language-dropdown:hover .dropdown-content {
+-    display: block; /* 鼠标悬停时显示下拉菜单 */
+-}
+-
+-.language-dropdown .dropdown-content a {
+-    color: #555;
+-    padding: 12px 16px;
+-    text-decoration: none;
+-    display: block;
+-    text-align: left;
+-}
+-
+-.language-dropdown .dropdown-content a:hover {
+-    background-color: #f1f1f1; /* 下拉菜单项悬停时的背景颜色 */
+-}
+-
+-input, button {
+-    border: none;
+-    outline: none;
+-    background: none;
+-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+-}
+-
+-.tip {
+-    font-size: 20px;
+-    margin: 40px auto 50px;
+-    text-align: center;
+-}
+-
+-.dowebok {
+-    overflow: hidden;
+-    position: absolute;
+-    left: 50%;
+-    top: 50%;
+-    width: 900px;
+-    height: 550px;
+-    margin: -300px 0 0 -450px;
+-    background: #fff;
+-}
+-
+-.form {
+-    position: relative;
+-    width: 640px;
+-    height: 100%;
+-    transition: -webkit-transform 0.6s ease-in-out;
+-    transition: transform 0.6s ease-in-out;
+-    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+-    padding: 50px 30px 0;
+-}
+-
+-.sub-cont {
+-    overflow: hidden;
+-    position: absolute;
+-    left: 640px;
+-    top: 0;
+-    width: 900px;
+-    height: 100%;
+-    padding-left: 260px;
+-    background: #fff;
+-    transition: -webkit-transform 0.6s ease-in-out;
+-    transition: transform 0.6s ease-in-out;
+-    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+-}
+-
+-.dowebok.s--signup .sub-cont {
+-    -webkit-transform: translate3d(-640px, 0, 0);
+-    transform: translate3d(-640px, 0, 0);
+-}
+-
+-button {
+-    display: block;
+-    margin: 0 auto;
+-    width: 260px;
+-    height: 36px;
+-    border-radius: 30px;
+-    color: #fff;
+-    font-size: 15px;
+-    cursor: pointer;
+-}
+-
+-.img {
+-    overflow: hidden;
+-    z-index: 2;
+-    position: absolute;
+-    left: 0;
+-    top: 0;
+-    width: 260px;
+-    height: 100%;
+-    padding-top: 360px;
+-}
+-
+-.img:before {
+-    content: '';
+-    position: absolute;
+-    right: 0;
+-    top: 0;
+-    width: 900px;
+-    height: 100%;
+-    background-image: url(2.jpg);
+-    background-size: cover;
+-    transition: -webkit-transform 0.6s ease-in-out;
+-    transition: transform 0.6s ease-in-out;
+-    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+-}
+-
+-.img:after {
+-    content: '';
+-    position: absolute;
+-    left: 0;
+-    top: 0;
+-    width: 100%;
+-    height: 100%;
+-    background: rgba(0, 0, 0, 0.6);
+-}
+-
+-.dowebok.s--signup .img:before {
+-    -webkit-transform: translate3d(640px, 0, 0);
+-    transform: translate3d(640px, 0, 0);
+-}
+-
+-.img__text {
+-    z-index: 2;
+-    position: absolute;
+-    left: 0;
+-    top: 50px;
+-    width: 100%;
+-    padding: 0 20px;
+-    text-align: center;
+-    color: #fff;
+-    transition: -webkit-transform 0.6s ease-in-out;
+-    transition: transform 0.6s ease-in-out;
+-    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+-}
+-
+-.img__text h2 {
+-    margin-bottom: 10px;
+-    font-weight: normal;
+-}
+-
+-.img__text p {
+-    font-size: 14px;
+-    line-height: 1.5;
+-}
+-
+-.dowebok.s--signup .img__text.m--up {
+-    -webkit-transform: translateX(520px);
+-    transform: translateX(520px);
+-}
+-.img__text.m--in {
+-    -webkit-transform: translateX(-520px);
+-    transform: translateX(-520px);
+-}
+-
+-.dowebok.s--signup .img__text.m--in {
+-    -webkit-transform: translateX(0);
+-    transform: translateX(0);
+-}
+-
+-.img__btn {
+-    overflow: hidden;
+-    z-index: 2;
+-    position: relative;
+-    width: 100px;
+-    height: 36px;
+-    margin: 0 auto;
+-    background: transparent;
+-    color: #fff;
+-    text-transform: uppercase;
+-    font-size: 15px;
+-    cursor: pointer;
+-}
+-.img__btn:after {
+-    content: '';
+-    z-index: 2;
+-    position: absolute;
+-    left: 0;
+-    top: 0;
+-    width: 100%;
+-    height: 100%;
+-    border: 2px solid #fff;
+-    border-radius: 30px;
+-}
+-
+-.img__btn span {
+-    position: absolute;
+-    left: 0;
+-    top: 0;
+-    display: flex;
+-    justify-content: center;
+-    align-items: center;
+-    width: 100%;
+-    height: 100%;
+-    transition: -webkit-transform 0.6s;
+-    transition: transform 0.6s;
+-    transition: transform 0.6s, -webkit-transform 0.6s;
+-}
+-
+-.img__btn span.m--in {
+-    -webkit-transform: translateY(-72px);
+-    transform: translateY(-72px);
+-}
+-
+-.dowebok.s--signup .img__btn span.m--in {
+-    -webkit-transform: translateY(0);
+-    transform: translateY(0);
+-}
+-
+-.dowebok.s--signup .img__btn span.m--up {
+-    -webkit-transform: translateY(72px);
+-    transform: translateY(72px);
+-}
+-
+-h2 {
+-    width: 100%;
+-    font-size: 26px;
+-    text-align: center;
+-}
+-
+-label {
+-    display: block;
+-    width: 260px;
+-    margin: 25px auto 0;
+-    text-align: center;
+-}
+-
+-label span {
+-    font-size: 12px;
+-    color: #909399;
+-    text-transform: uppercase;
+-}
+-
+-input {
+-    display: block;
+-    width: 100%;
+-    margin-top: 5px;
+-    padding-bottom: 5px;
+-    font-size: 16px;
+-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+-    text-align: center;
+-}
+-
+-.forgot-pass {
+-    margin-top: 15px;
+-    text-align: center;
+-    font-size: 12px;
+-    color: #cfcfcf;
+-}
+-
+-.forgot-pass a {
+-    color: #625b5b;
+-}
+-
+-.submit {
+-    margin-top: 40px;
+-    margin-bottom: 20px;
+-    background: #d4af7a;
+-    text-transform: uppercase;
+-}
+-
+-.fb-btn {
+-    border: 2px solid #d3dae9;
+-    color: #8fa1c7;
+-}
+-.fb-btn span {
+-    font-weight: bold;
+-    color: #455a81;
+-}
+-
+-.sign-in {
+-    transition-timing-function: ease-out;
+-}
+-.dowebok.s--signup .sign-in {
+-    transition-timing-function: ease-in-out;
+-    transition-duration: 0.6s;
+-    -webkit-transform: translate3d(640px, 0, 0);
+-    transform: translate3d(640px, 0, 0);
+-}
+-
+-.sign-up {
+-    -webkit-transform: translate3d(-900px, 0, 0);
+-    transform: translate3d(-900px, 0, 0);
+-}
+-.dowebok.s--signup .sign-up {
+-    -webkit-transform: translate3d(0, 0, 0);
+-    transform: translate3d(0, 0, 0);
+-}
+diff --git a/template/about.html b/template/about.html
+new file mode 100644
+index 0000000..fb78900
+--- /dev/null
++++ b/template/about.html
+@@ -0,0 +1,99 @@
++<!DOCTYPE html>
++<html lang="zh">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>帮助中心</title>
++    <style>
++        body {
++            font-family: Arial, sans-serif;
++            margin: 0;
++            padding: 0;
++            line-height: 1.6;
++            color: #333;
++            max-width: 800px;
++            margin: 0 auto; /* 页面居中 */
++            padding: 20px;
++        }
++        h2 {
++            color: blue; /* 小标题颜色 */
++            font-weight: bold; /* 加粗小标题 */
++            font-size: 1em; /* 调整小标题的字号 */
++            text-align: left;
++            margin-top: 20px;
++        }
++        h1 {
++            text-align: center; /* 大标题居中 */
++
++        }
++        h2 {
++            margin-top: 20px; /* 小标题上边距 */
++            font-size: 30px;
++            
++        }
++        p {
++            margin: 5px 0; /* 段落上下边距 */
++            font-size: 15px;
++        }
++        /* 问题和答案样式 */
++        .faq {
++            margin: 4px 0; /* 问题和答案的间距 */
++            font-size: 15px;
++        }
++        .question {
++            font-weight: bold; /* 问题加粗 */
++        }
++        .answer {
++            margin-left: 20px; /* 答案缩进 */
++        }
++        .logo {
++            position: absolute;
++            top: 10px;
++            left: 10px;
++            width: 150px; /* 设置logo宽度，可根据需要调整 */
++            height: auto;
++        }
++        .link {
++        color: #888888; /* 设置超链接颜色为灰色 */
++        text-decoration: none; /* 去掉下划线 */
++    }
++    .link:hover {
++        text-decoration: underline; /* 鼠标悬停时加下划线 */
++    }
++    </style>
++</head>
++<body>
++    <a href="login.html"><img src="..\static\logo1.png" alt="Logo" class="logo"></a>
++    
++    <h1><strong>帮助中心<strong></h1>
++    
++    <h2>一、常见问题</h2>
++    <div class="faq">
++        <span class="question">Q1: 如何注册账号？</span><br>
++        <span class="answer">A1: 请访问<a href="../index0.html" class="link">注册页面链接</a>，填写相关信息进行注册。</span>
++    </div>
++    <div class="faq">
++        <span class="question">Q2: 忘记密码怎么办？</span><br>
++        <span class="answer">A2: 请访问<a href="[找回密码页面链接]" class="link">找回密码页面链接</a>，按照提示进行密码重置。</span>
++    </div>
++    <div class="faq">
++        <span class="question">Q3: 如何修改个人信息？</span><br>
++        <span class="answer">A3: 登录后，进入<a href="[个人中心页面链接]" class="link">个人中心页面链接</a>，点击“修改信息”进行操作。</span>
++    </div>
++    
++    <h2>二、使用指南</h2>
++    <p><strong>1. 功能介绍</strong></p>
++    <p><strong>[功能1]</strong>：[功能1的详细说明]</p>
++    <p><strong>[功能2]</strong>：[功能2的详细说明]</p>
++
++    <p><strong>2. 操作步骤</strong></p>
++    <p><strong>[操作1]</strong>：[操作1的详细步骤]</p>
++    <p><strong>[操作2]</strong>：[操作2的详细步骤]</p>
++
++    <h2>三、联系我们</h2>
++    <p>如果您在使用过程中遇到任何问题，欢迎通过以下方式联系我们：</p>
++    <p>电子邮件：<a href="[电子邮件地址]" class="link">[电子邮件地址]</a></p>
++    <p>社交媒体：<a href="[社交媒体账号]" class="link">[社交媒体账号]</a></p>
++    <p>在线客服：<a href="[在线客服链接]" class="link">[在线客服链接]</a></p>
++</body>
++</html>
+diff --git a/template/forget_passwd.html b/template/forget_passwd.html
+new file mode 100644
+index 0000000..f59f3d7
+--- /dev/null
++++ b/template/forget_passwd.html
+@@ -0,0 +1,66 @@
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Document</title>
++    <style>
++        span {
++
++            position: relative;
++            left: 40px;
++            top: 40px;
++        }
++        span>p{
++            font-size: large;
++        }
++        button {
++            height: 50px;
++            width: 300px;
++            position: relative;
++            top: 100px;
++            left: 100px;
++        }
++
++        .passwords>.tishi>P {
++        
++           color: brown;
++        }
++        .passwords {
++            position: relative;
++            top: 70px;
++            left: 40px;
++            position: relative;
++            display: block;
++
++        }
++        .tishi{
++            visibility: hidden;
++        }
++        .error{
++            position: relative;
++            top: 80px;
++            left: 40px;
++        }
++    </style>
++    <link rel="stylesheet" href="..\static\styleforget.css">
++</head>
++
++<body>
++    <div class="container1">
++        <div class="main">
++        <span>
++            <p>邮箱:</p>
++        </span>
++      
++        <div class="passwords">
++            <input type="email" id="email" placeholder="邮箱地址" name="email"required />
++        </div>
++        <div class="error">{{ get_flashed_messages()[0] if get_flashed_messages() else '' }}</div>
++        <button>发送验证码</button>
++        </div>
++    </div>
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/template/login.html b/template/login.html
+new file mode 100644
+index 0000000..5d032b7
+--- /dev/null
++++ b/template/login.html
+@@ -0,0 +1,71 @@
++<!DOCTYPE html>
++<html lang="zh-CN">
++
++<head>
++    <meta charset="utf-8">
++    <title>实现左右过渡切换的登录注册页面</title>
++    <link rel="stylesheet" href="..\static\stylelogin.css">
++</head>
++
++<body>
++
++    <!-- 右上 -->
++    <div class="navbar">
++        <a href="user_agreement.html" class="nav-item">用户协议</a>
++        <a href="privacy_policy.html" class="nav-item">隐私政策</a>
++        <a href="about.html" class="nav-item">帮助中心</a>
++        <div class="nav-item">
++            <span>中文（简体）</span>
++        </div>
++    </div>
++    <!-- 登录界面 -->
++    <div class="dowebok">
++        <div class="form sign-in">
++            <h2>欢迎回来</h2>
++
++            <div class="password11">
++                <input placeholder="用户名" type="text" name="username" required />
++                <input placeholder="密码" type="password" id="password" name="passwd" required />
++            </div>
++            
++            <button type="button" class="submit">登 录</button>
++            <button type="button" class="fb-btn">暂不登陆，先看看？</button>
++            <p class="forgot-pass"><a href="forget_passwd.html">忘记密码？</a></p>
++        </div>
++        <div class="sub-cont">
++            <div class="img">
++                <div class="img__text m--up">
++                    <h2>还未注册？</h2>
++
++                </div>
++                <div class="img__text m--in">
++                    <h2>已有帐号？</h2>
++
++                </div>
++                <div class="img__btn">
++                    <span class="m--up">注 册</span>
++                    <span class="m--in">登 录</span>
++                </div>
++            </div>
++            <div class="form sign-up">
++                <h2>立即注册</h2>
++                <div class="password11">
++                    <input placeholder="用户名" type="text" name="username" required />
++
++
++                    <input placeholder="邮箱" name="email" type="email" required />
++
++
++                    <input placeholder="密码" type="password" name="passwd" required />
++                    <div>
++                        <button type="button" class="submit">注 册</button>
++                        <button type="button" class="fb-btn">暂不登陆，先看看？</button>
++                    </div>
++                </div>
++            </div>
++
++            <script src="..\static\login.js"></script>
++          
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/template/privacy_policy.html b/template/privacy_policy.html
+new file mode 100644
+index 0000000..8164efe
+--- /dev/null
++++ b/template/privacy_policy.html
+@@ -0,0 +1,122 @@
++<!DOCTYPE html>
++<html lang="zh">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>隐私政策</title>
++    <style>
++          .logo {
++            position: absolute;
++            top: 10px;
++            left: 10px;
++            width: 150px; /* 设置logo宽度，可根据需要调整 */
++            height: auto;
++        }
++       
++        body {
++            font-family: Arial, sans-serif;
++            color: #333;
++            line-height: 1.6;
++            margin: 0;
++            padding: 0;
++        }
++        .container {
++            max-width: 800px;
++            margin: 0 auto;
++            padding: 20px;
++        }
++        h1 {
++            text-align: center;
++            color: #333;
++        }
++        .update-date {
++            text-align: left;
++            color: #666;
++            font-size: 0.9em;
++            margin-top: 10px;
++        }
++        h2 {
++            color: blue;
++            font-weight: bold;
++            font-size: 1.2em;
++            margin-top: 20px;
++        }
++        p {
++            color: #555;
++            font-size: 1em;
++            margin: 10px 0;
++        }
++        a {
++            color: #888;
++            text-decoration: none;
++        }
++        a:hover {
++            text-decoration: underline;
++        }
++    </style>
++</head>
++<body>
++
++<div class="container">
++    <h1>隐私政策</h1>
++    <p class="update-date">最后更新日期：[填写日期]</p>
++    <a href="login.html"><img src="..\static\logo1.png" alt="Logo" class="logo"></a>
++
++
++    <h2>一、引言</h2>
++    <p>我们（[平台名称]）深知保护用户隐私的重要性，本隐私政策旨在向您说明我们如何收集、使用、存储和保护您的个人信息。请您在使用我们的服务前仔细阅读本政策。</p>
++
++    <h2>二、适用范围</h2>
++    <p>本隐私政策适用于[平台名称]提供的所有服务。</p>
++
++    <h2>三、信息收集</h2>
++    <p><strong>基本信息</strong>：我们可能会收集您的姓名、电子邮件地址、电话号码等基本信息。</p>
++    <p><strong>使用信息</strong>：我们可能会收集您使用平台时的行为数据，如访问时间、浏览记录、点击次数等。</p>
++    <p><strong>设备信息</strong>：我们可能会收集您的设备型号、操作系统版本、IP地址等信息。</p>
++
++    <h2>四、信息使用</h2>
++    <p>我们可能会将收集到的信息用于以下目的：</p>
++    <ul>
++        <li>提供和改进我们的服务。</li>
++        <li>与您联系，发送服务相关的通知和更新。</li>
++        <li>进行数据分析，了解用户行为和偏好。</li>
++        <li>防止欺诈和提升安全性。</li>
++    </ul>
++
++    <h2>五、信息共享</h2>
++    <p>我们不会将您的个人信息出售给第三方。但在以下情况下，我们可能会与第三方共享您的信息：</p>
++    <ul>
++        <li><strong>服务提供商</strong>：我们可能会与提供技术支持、数据分析等服务的第三方共享信息。</li>
++        <li><strong>法律要求</strong>：在法律法规要求或法院命令的情况下，我们可能会披露您的信息。</li>
++    </ul>
++
++    <h2>六、信息安全</h2>
++    <p>我们采取合理的措施来保护您的个人信息安全，防止未经授权的访问、使用或泄露。</p>
++
++    <h2>七、用户权利</h2>
++    <p>您有权：</p>
++    <ul>
++        <li>查询、访问您的个人信息。</li>
++        <li>更正不准确或不完整的个人信息。</li>
++        <li>删除您的个人信息。</li>
++    </ul>
++    <p>如需行使上述权利，请通过<a href="mailto:[电子邮件地址]">[联系方式]</a>与我们联系。</p>
++
++    <h2>八、隐私政策的更新</h2>
++    <p>我们可能会不时更新本隐私政策，以反映服务变化和法律法规的要求。更新后的政策将在平台上发布。</p>
++
++    <h2>九、联系我们</h2>
++    <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式与我们联系：</p>
++    <ul>
++        <li>电子邮件：[电子邮件地址]</li>
++        <li>社交媒体：[社交媒体账号]</li>
++    </ul>
++
++    <h2>十、法律适用</h2>
++    <p>本隐私政策受[适用法律，如“中华人民共和国法律”]管辖。</p>
++
++    <p>感谢您使用[平台名称]的服务。我们承诺保护您的隐私，并努力为您提供更优质的服务。</p>
++</div>
++
++</body>
++</html>
+diff --git a/template/reset_passwd.html b/template/reset_passwd.html
+new file mode 100644
+index 0000000..77c4b22
+--- /dev/null
++++ b/template/reset_passwd.html
+@@ -0,0 +1,41 @@
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Document</title>
++    <link rel="stylesheet" href="..\static\styleforget.css">
++    <style>
++        .main {
++            position: relative;
++            left: 20px;
++        }
++        button{
++            width: 440px;
++            height: 50px;
++           position: relative;
++        top: 20px;
++        left: 5px;
++        }
++        .container1{
++            height: 480px ;
++        }
++    </style>
++</head>
++
++<body>
++    <div class="container1">
++        <div class="main">
++            <h1>验证成功</h1>
++            <p>请输入新的密码</p>
++            <input type="password" placeholder="请输入你的密码"name="passwd1"required>
++            <p>确定你的密码</p>
++            <input type="password" placeholder="确定你的密码"name="passwd2"required>
++            <div class="error">{{ get_flashed_messages()[0] if get_flashed_messages() else '' }}</div>
++            <button>返回登录</button>
++        </div>
++    </div>
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/template/user_agreement.html b/template/user_agreement.html
+new file mode 100644
+index 0000000..0d7892e
+--- /dev/null
++++ b/template/user_agreement.html
+@@ -0,0 +1,82 @@
++<!DOCTYPE html>
++<html lang="zh">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>用户协议</title>
++    <style>
++       
++        /* 设置logo图片 */
++        .logo {
++            position: absolute;
++            top: 10px;
++            left: 10px;
++            width: 150px; /* 设置logo宽度，可根据需要调整 */
++            height: auto;
++        }
++        /* 设置内容容器填满屏幕宽度 */
++        .content {
++            max-width: 800px;
++            margin: 0 auto;
++            padding: 0;
++        }
++        /* 小标题样式 */
++        h2 {
++            color: blue; /* 小标题颜色 */
++            font-weight: bold; /* 加粗小标题 */
++            font-size: 1em; /* 调整小标题的字号 */
++            text-align: left;
++            margin-top: 20px;
++            font-size: 30px;
++        }
++        /* 设置正文部分边距 */
++        body, h1, p {
++            margin: 0;
++            padding: 0;
++            text-align: left; /* 所有文本左对齐 */
++        }
++        /* 段落样式 */
++        p {
++            color: #888888; /* 段落文本为灰色 */
++        }
++        /* 大标题居中 */
++        h1 {
++            text-align: center;
++            margin-top: 20px;
++        }
++    </style>
++</head>
++<body>
++    <p class="date" style="text-align: center; color: #888888; margin-top: 60px;">最后更新日期：[填写日期]</p>
++    <a href="..\static\login.html"><img src="..\static\logo1.png" alt="Logo" class="logo"></a>
++
++    
++   
++    <div class="content">
++        <h1>用户协议</h1>
++        <h2>一、引言</h2>
++        <p>欢迎您使用[平台名称]！本用户协议（以下简称“协议”）旨在明确您与[平台名称]之间的权利和义务。请您在使用我们的服务前仔细阅读本协议。</p>
++
++        <h2>二、服务内容</h2>
++        <p>[平台名称]提供的服务<strong>包括但不限于</strong>用户注册、信息发布、互动交流等。</p>
++
++        <h2>三、用户注册</h2>
++        <p>用户需提供<strong>真实、准确</strong>的个人信息进行注册。用户应对其账号和密码的安全负责，不得将账号借给他人使用。</p>
++
++        <h2>四、用户行为规范</h2>
++        <p><strong>用户不得利用平台进行违法活动。用户不得发布虚假信息、恶意攻击他人或侵犯他人合法权益。用户不得干扰平台的正常运行。</strong></p>
++
++        <h2>五、知识产权</h2>
++        <p>平台的所有知识产权归开发者所有。用户在使用平台过程中产生的原创内容，其知识产权归用户所有，但开发者有权进行使用和展示。</p>
++
++        <h2>六、免责声明</h2>
++        <p>开发者不保证平台的完全准确性、安全性或无中断性。用户因使用平台而产生的任何损失，开发者<strong>不承担</strong>赔偿责任。</p>
++
++        <h2>七、协议的修改和终止</h2>
++        <p>开发者<strong>有权随时修改本协议</strong>，修改后的协议将在平台上发布。开发者有权在必要时终止服务，并提前通知用户。</p>
++
++        <h2>八、法律适用</h2>
++        <p>本协议受《中华人民共和国法律》管辖。</p>
++    </div>
++</body>
++</html>
+diff --git a/template/verify_code_input.html b/template/verify_code_input.html
+new file mode 100644
+index 0000000..ec96182
+--- /dev/null
++++ b/template/verify_code_input.html
+@@ -0,0 +1,42 @@
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Document</title>
++    <link rel="stylesheet" href="..\static\styleforget.css">
++    <style>
++        .main {
++            position: relative;
++            left: 40px;
++
++        }
++
++        button {
++            position: relative;
++            top: 30px;
++            left: 50px;
++            height: 50px;
++            width: 300px;
++            border-radius: 5px;
++        }
++
++        
++    </style>
++</head>
++
++<body>
++    <div class="container1">
++        <div class="main">
++            <h3>验证码已成功发送</h3><br>
++            <h4>请输入验证码</h4>
++            <input id="verify_code" type="text" placeholder="验证码" name="verify_code" required><br>
++            <div class="error">{{ get_flashed_messages()[0] if get_flashed_messages() else '' }}</div>
++            <button name="verify_code_input">确定</button>
++        </div>
++    </div>
++
++</body>
++
++</html>
+\ No newline at end of file
+diff --git "a/\345\215\217\350\256\256/1.png" "b/\345\215\217\350\256\256/1.png"
+deleted file mode 100644
+index a0cfe9b..0000000
+Binary files "a/\345\215\217\350\256\256/1.png" and /dev/null differ
+diff --git "a/\345\215\217\350\256\256/bangzhuzhongxin.html" "b/\345\215\217\350\256\256/bangzhuzhongxin.html"
+deleted file mode 100644
+index dde0b6c..0000000
+--- "a/\345\215\217\350\256\256/bangzhuzhongxin.html"
++++ /dev/null
+@@ -1,99 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="zh">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>帮助中心</title>
+-    <style>
+-        body {
+-            font-family: Arial, sans-serif;
+-            margin: 0;
+-            padding: 0;
+-            line-height: 1.6;
+-            color: #333;
+-            max-width: 800px;
+-            margin: 0 auto; /* 页面居中 */
+-            padding: 20px;
+-        }
+-        h2 {
+-            color: blue; /* 小标题颜色 */
+-            font-weight: bold; /* 加粗小标题 */
+-            font-size: 1em; /* 调整小标题的字号 */
+-            text-align: left;
+-            margin-top: 20px;
+-        }
+-        h1 {
+-            text-align: center; /* 大标题居中 */
+-
+-        }
+-        h2 {
+-            margin-top: 20px; /* 小标题上边距 */
+-            font-size: 30px;
+-            
+-        }
+-        p {
+-            margin: 5px 0; /* 段落上下边距 */
+-            font-size: 15px;
+-        }
+-        /* 问题和答案样式 */
+-        .faq {
+-            margin: 4px 0; /* 问题和答案的间距 */
+-            font-size: 15px;
+-        }
+-        .question {
+-            font-weight: bold; /* 问题加粗 */
+-        }
+-        .answer {
+-            margin-left: 20px; /* 答案缩进 */
+-        }
+-        .logo {
+-            position: absolute;
+-            top: 10px;
+-            left: 10px;
+-            width: 150px; /* 设置logo宽度，可根据需要调整 */
+-            height: auto;
+-        }
+-        .link {
+-        color: #888888; /* 设置超链接颜色为灰色 */
+-        text-decoration: none; /* 去掉下划线 */
+-    }
+-    .link:hover {
+-        text-decoration: underline; /* 鼠标悬停时加下划线 */
+-    }
+-    </style>
+-</head>
+-<body>
+-    <a href="..\index0.html"><img src="1.png" alt="Logo" class="logo"></a>
+-    
+-    <h1><strong>帮助中心<strong></h1>
+-    
+-    <h2>一、常见问题</h2>
+-    <div class="faq">
+-        <span class="question">Q1: 如何注册账号？</span><br>
+-        <span class="answer">A1: 请访问<a href="../index0.html" class="link">注册页面链接</a>，填写相关信息进行注册。</span>
+-    </div>
+-    <div class="faq">
+-        <span class="question">Q2: 忘记密码怎么办？</span><br>
+-        <span class="answer">A2: 请访问<a href="[找回密码页面链接]" class="link">找回密码页面链接</a>，按照提示进行密码重置。</span>
+-    </div>
+-    <div class="faq">
+-        <span class="question">Q3: 如何修改个人信息？</span><br>
+-        <span class="answer">A3: 登录后，进入<a href="[个人中心页面链接]" class="link">个人中心页面链接</a>，点击“修改信息”进行操作。</span>
+-    </div>
+-    
+-    <h2>二、使用指南</h2>
+-    <p><strong>1. 功能介绍</strong></p>
+-    <p><strong>[功能1]</strong>：[功能1的详细说明]</p>
+-    <p><strong>[功能2]</strong>：[功能2的详细说明]</p>
+-
+-    <p><strong>2. 操作步骤</strong></p>
+-    <p><strong>[操作1]</strong>：[操作1的详细步骤]</p>
+-    <p><strong>[操作2]</strong>：[操作2的详细步骤]</p>
+-
+-    <h2>三、联系我们</h2>
+-    <p>如果您在使用过程中遇到任何问题，欢迎通过以下方式联系我们：</p>
+-    <p>电子邮件：<a href="[电子邮件地址]" class="link">[电子邮件地址]</a></p>
+-    <p>社交媒体：<a href="[社交媒体账号]" class="link">[社交媒体账号]</a></p>
+-    <p>在线客服：<a href="[在线客服链接]" class="link">[在线客服链接]</a></p>
+-</body>
+-</html>
+diff --git "a/\345\215\217\350\256\256/xieyi.html" "b/\345\215\217\350\256\256/xieyi.html"
+deleted file mode 100644
+index 3495307..0000000
+--- "a/\345\215\217\350\256\256/xieyi.html"
++++ /dev/null
+@@ -1,82 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="zh">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>用户协议</title>
+-    <style>
+-       
+-        /* 设置logo图片 */
+-        .logo {
+-            position: absolute;
+-            top: 10px;
+-            left: 10px;
+-            width: 150px; /* 设置logo宽度，可根据需要调整 */
+-            height: auto;
+-        }
+-        /* 设置内容容器填满屏幕宽度 */
+-        .content {
+-            max-width: 800px;
+-            margin: 0 auto;
+-            padding: 0;
+-        }
+-        /* 小标题样式 */
+-        h2 {
+-            color: blue; /* 小标题颜色 */
+-            font-weight: bold; /* 加粗小标题 */
+-            font-size: 1em; /* 调整小标题的字号 */
+-            text-align: left;
+-            margin-top: 20px;
+-            font-size: 30px;
+-        }
+-        /* 设置正文部分边距 */
+-        body, h1, p {
+-            margin: 0;
+-            padding: 0;
+-            text-align: left; /* 所有文本左对齐 */
+-        }
+-        /* 段落样式 */
+-        p {
+-            color: #888888; /* 段落文本为灰色 */
+-        }
+-        /* 大标题居中 */
+-        h1 {
+-            text-align: center;
+-            margin-top: 20px;
+-        }
+-    </style>
+-</head>
+-<body>
+-    <p class="date" style="text-align: center; color: #888888; margin-top: 60px;">最后更新日期：[填写日期]</p>
+-    <a href="..\index0.html"><img src="1.png" alt="Logo" class="logo"></a>
+-
+-    
+-   
+-    <div class="content">
+-        <h1>用户协议</h1>
+-        <h2>一、引言</h2>
+-        <p>欢迎您使用[平台名称]！本用户协议（以下简称“协议”）旨在明确您与[平台名称]之间的权利和义务。请您在使用我们的服务前仔细阅读本协议。</p>
+-
+-        <h2>二、服务内容</h2>
+-        <p>[平台名称]提供的服务<strong>包括但不限于</strong>用户注册、信息发布、互动交流等。</p>
+-
+-        <h2>三、用户注册</h2>
+-        <p>用户需提供<strong>真实、准确</strong>的个人信息进行注册。用户应对其账号和密码的安全负责，不得将账号借给他人使用。</p>
+-
+-        <h2>四、用户行为规范</h2>
+-        <p><strong>用户不得利用平台进行违法活动。用户不得发布虚假信息、恶意攻击他人或侵犯他人合法权益。用户不得干扰平台的正常运行。</strong></p>
+-
+-        <h2>五、知识产权</h2>
+-        <p>平台的所有知识产权归开发者所有。用户在使用平台过程中产生的原创内容，其知识产权归用户所有，但开发者有权进行使用和展示。</p>
+-
+-        <h2>六、免责声明</h2>
+-        <p>开发者不保证平台的完全准确性、安全性或无中断性。用户因使用平台而产生的任何损失，开发者<strong>不承担</strong>赔偿责任。</p>
+-
+-        <h2>七、协议的修改和终止</h2>
+-        <p>开发者<strong>有权随时修改本协议</strong>，修改后的协议将在平台上发布。开发者有权在必要时终止服务，并提前通知用户。</p>
+-
+-        <h2>八、法律适用</h2>
+-        <p>本协议受《中华人民共和国法律》管辖。</p>
+-    </div>
+-</body>
+-</html>
+diff --git "a/\345\215\217\350\256\256/zhengce.html" "b/\345\215\217\350\256\256/zhengce.html"
+deleted file mode 100644
+index 012841b..0000000
+--- "a/\345\215\217\350\256\256/zhengce.html"
++++ /dev/null
+@@ -1,122 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="zh">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>隐私政策</title>
+-    <style>
+-          .logo {
+-            position: absolute;
+-            top: 10px;
+-            left: 10px;
+-            width: 150px; /* 设置logo宽度，可根据需要调整 */
+-            height: auto;
+-        }
+-       
+-        body {
+-            font-family: Arial, sans-serif;
+-            color: #333;
+-            line-height: 1.6;
+-            margin: 0;
+-            padding: 0;
+-        }
+-        .container {
+-            max-width: 800px;
+-            margin: 0 auto;
+-            padding: 20px;
+-        }
+-        h1 {
+-            text-align: center;
+-            color: #333;
+-        }
+-        .update-date {
+-            text-align: left;
+-            color: #666;
+-            font-size: 0.9em;
+-            margin-top: 10px;
+-        }
+-        h2 {
+-            color: blue;
+-            font-weight: bold;
+-            font-size: 1.2em;
+-            margin-top: 20px;
+-        }
+-        p {
+-            color: #555;
+-            font-size: 1em;
+-            margin: 10px 0;
+-        }
+-        a {
+-            color: #888;
+-            text-decoration: none;
+-        }
+-        a:hover {
+-            text-decoration: underline;
+-        }
+-    </style>
+-</head>
+-<body>
+-
+-<div class="container">
+-    <h1>隐私政策</h1>
+-    <p class="update-date">最后更新日期：[填写日期]</p>
+-    <a href="..\index0.html"><img src="1.png" alt="Logo" class="logo"></a>
+-
+-
+-    <h2>一、引言</h2>
+-    <p>我们（[平台名称]）深知保护用户隐私的重要性，本隐私政策旨在向您说明我们如何收集、使用、存储和保护您的个人信息。请您在使用我们的服务前仔细阅读本政策。</p>
+-
+-    <h2>二、适用范围</h2>
+-    <p>本隐私政策适用于[平台名称]提供的所有服务。</p>
+-
+-    <h2>三、信息收集</h2>
+-    <p><strong>基本信息</strong>：我们可能会收集您的姓名、电子邮件地址、电话号码等基本信息。</p>
+-    <p><strong>使用信息</strong>：我们可能会收集您使用平台时的行为数据，如访问时间、浏览记录、点击次数等。</p>
+-    <p><strong>设备信息</strong>：我们可能会收集您的设备型号、操作系统版本、IP地址等信息。</p>
+-
+-    <h2>四、信息使用</h2>
+-    <p>我们可能会将收集到的信息用于以下目的：</p>
+-    <ul>
+-        <li>提供和改进我们的服务。</li>
+-        <li>与您联系，发送服务相关的通知和更新。</li>
+-        <li>进行数据分析，了解用户行为和偏好。</li>
+-        <li>防止欺诈和提升安全性。</li>
+-    </ul>
+-
+-    <h2>五、信息共享</h2>
+-    <p>我们不会将您的个人信息出售给第三方。但在以下情况下，我们可能会与第三方共享您的信息：</p>
+-    <ul>
+-        <li><strong>服务提供商</strong>：我们可能会与提供技术支持、数据分析等服务的第三方共享信息。</li>
+-        <li><strong>法律要求</strong>：在法律法规要求或法院命令的情况下，我们可能会披露您的信息。</li>
+-    </ul>
+-
+-    <h2>六、信息安全</h2>
+-    <p>我们采取合理的措施来保护您的个人信息安全，防止未经授权的访问、使用或泄露。</p>
+-
+-    <h2>七、用户权利</h2>
+-    <p>您有权：</p>
+-    <ul>
+-        <li>查询、访问您的个人信息。</li>
+-        <li>更正不准确或不完整的个人信息。</li>
+-        <li>删除您的个人信息。</li>
+-    </ul>
+-    <p>如需行使上述权利，请通过<a href="mailto:[电子邮件地址]">[联系方式]</a>与我们联系。</p>
+-
+-    <h2>八、隐私政策的更新</h2>
+-    <p>我们可能会不时更新本隐私政策，以反映服务变化和法律法规的要求。更新后的政策将在平台上发布。</p>
+-
+-    <h2>九、联系我们</h2>
+-    <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式与我们联系：</p>
+-    <ul>
+-        <li>电子邮件：[电子邮件地址]</li>
+-        <li>社交媒体：[社交媒体账号]</li>
+-    </ul>
+-
+-    <h2>十、法律适用</h2>
+-    <p>本隐私政策受[适用法律，如“中华人民共和国法律”]管辖。</p>
+-
+-    <p>感谢您使用[平台名称]的服务。我们承诺保护您的隐私，并努力为您提供更优质的服务。</p>
+-</div>
+-
+-</body>
+-</html>
